@@ -17,10 +17,10 @@ st.markdown("Enter environmental conditions to predict the air quality.")
 
 region_defaults = {
     "Central Jakarta": {"pop_density": 23000, "industrial_proximity": 3.0},
-    "West Jakarta": {"pop_density": 19000, "industrial_proximity": 6.0},
-    "East Jakarta": {"pop_density": 18000, "industrial_proximity": 7.5},
-    "North Jakarta": {"pop_density": 15000, "industrial_proximity": 4.0},
-    "South Jakarta": {"pop_density": 14000, "industrial_proximity": 8.0},
+    "West Jakarta": {"pop_density": 20000, "industrial_proximity": 6.0},
+    "East Jakarta": {"pop_density": 11000, "industrial_proximity": 7.5},
+    "North Jakarta": {"pop_density": 12000, "industrial_proximity": 4.0},
+    "South Jakarta": {"pop_density": 15000, "industrial_proximity": 8.0},
 }
 
 
@@ -84,3 +84,36 @@ if st.button("🔍 Predict"):
     display_label = category_map.get(predicted_label, predicted_label)
 
     st.success(f"Predicted Air Quality: **{display_label}**")
+
+    if predicted_label == "Good":
+        st.info("""
+        🟢 **Good Air Quality**
+
+        - **Do:** Enjoy all outdoor activities freely! It's a perfect time to be outside.
+        - **At Home:** Open windows to ventilate your home with fresh air.
+        - **Health:** No specific health precautions needed for anyone.
+        """)
+    elif predicted_label == "Moderate":
+        st.warning("""
+        🟡 **Moderate Air Quality**
+
+        - **Do:** Most outdoor activities are generally fine for the majority of people.
+        - **Caution:** Sensitive individuals (children, elderly, those with heart/lung conditions) should reduce the intensity or duration of heavy outdoor exertion.
+        - **At Home:** Usually okay to ventilate, but monitor pollutant levels if sensitive.
+        """)
+    elif predicted_label == "Poor":
+        st.error("""
+        🔴 **Poor (Unhealthy) Air Quality**
+
+        - **Do:** Reduce prolonged or strenuous outdoor activities. Prioritize staying indoors.
+        - **Protection:** Wear an N95 or KN95 mask if going outside.
+        - **At Home:** Keep windows closed. Use air purifiers if available.
+        """)
+    elif predicted_label == "Hazardous":
+        st.error("""
+        🟣 **Hazardous Air Quality**
+
+        - **Do:** Stay indoors. Avoid all outdoor physical activity.
+        - **Protection:** If unavoidable, wear a well-fitted N95 or P100 respirator.
+        - **At Home:** Keep windows and doors closed. Use air purifiers on high setting.
+        """)
