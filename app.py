@@ -15,15 +15,6 @@ st.set_page_config(
 st.title("Air Quality Index (AQI) Prediction")
 st.markdown("Enter environmental conditions to predict the air quality.")
 
-# region_defaults = {
-#     "Central Jakarta": {"industrial_proximity": 3.0},
-#     "West Jakarta": {"industrial_proximity": 6.0},
-#     "East Jakarta": {"industrial_proximity": 10.2},
-#     "North Jakarta": {"industrial_proximity": 4.0},
-#     "South Jakarta": {"industrial_proximity": 8.0},
-# }
-
-
 col1, col2= st.columns(2)
 
 with col1:
