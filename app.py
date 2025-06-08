@@ -77,7 +77,8 @@ pm10_input = st.number_input(
     min_value=0.0,
     max_value=320.0,
     step=0.1,
-    value=50.0, # Default value for the number input
+    value=50.0,
+    key="num_input_pm10",
     help="Particulate Matter ≤10 micrometers in diameter (μg/m³)"
 )
 
@@ -86,7 +87,8 @@ pm10_slider = st.slider(
     min_value=0.0,
     max_value=320.0,
     step=0.1,
-    value=pm10_input, # The slider's value is controlled by the number input
+    value=pm10_input,
+    key="slider_pm10",
     help="Particulate Matter ≤10 micrometers in diameter (μg/m³)"
 )
 
@@ -111,8 +113,8 @@ pm25_input = st.number_input(
     min_value=0.0,
     max_value=300.0,
     step=0.1,
-    value=25.0, # Default value for the number input
-    key="num_input_pm25", # Assign a unique key for this widget
+    value=25.0,
+    key="num_input_pm25",
     help="Fine particulate matter (μg/m³)"
 )
 pm25_slider = st.slider(
@@ -120,8 +122,8 @@ pm25_slider = st.slider(
     min_value=0.0,
     max_value=300.0,
     step=0.1,
-    value=pm25_input, # Link the slider's value to the number input's value
-    key="slider_pm25", # Assign a unique key for this widget
+    value=pm25_input,
+    key="slider_pm25",
     help="Fine particulate matter (μg/m³)"
 )
 pm25 = pm25_slider
@@ -143,19 +145,19 @@ st.subheader("NO₂ Level")
 no2_input = st.number_input(
     "Enter NO₂ level (ppb)",
     min_value=0.0,
-    max_value=100.0, # Increased max_value slightly for broader range based on categories
+    max_value=100.0,
     step=1.0,
     value=50.0,
-    key="num_input_no2", # Unique key for this widget
+    key="num_input_no2",
     help="Nitrogen Dioxide level in parts per billion (ppb)"
 )
 no2_slider = st.slider(
     "Adjust NO₂ level (ppb)",
     min_value=0.0,
-    max_value=100.0, # Consistent max_value with number_input
+    max_value=100.0,
     step=1.0,
-    value=no2_input, # Link slider to number input
-    key="slider_no2", # Unique key for this widget
+    value=no2_input,
+    key="slider_no2",
     help="Nitrogen Dioxide level in parts per billion (ppb)"
 )
 no2 = no2_slider
@@ -176,19 +178,19 @@ st.subheader("SO₂ Level")
 so2_input = st.number_input(
     "Enter SO₂ level (ppb)",
     min_value=0.0,
-    max_value=50.0, # Adjusted max_value to accommodate more categories based on thresholds
+    max_value=50.0,
     step=1.0,
     value=30.0,
-    key="num_input_so2", # Unique key for this widget
+    key="num_input_so2",
     help="Sulfur Dioxide level in parts per billion (ppb)"
 )
 so2_slider = st.slider(
     "Adjust SO₂ level (ppb)",
     min_value=0.0,
-    max_value=50.0, # Consistent max_value with number_input
+    max_value=50.0,
     step=1.0,
-    value=so2_input, # Link slider to number input
-    key="slider_so2", # Unique key for this widget
+    value=so2_input,
+    key="slider_so2",
     help="Sulfur Dioxide level in parts per billion (ppb)"
 )
 so2 = so2_slider
@@ -210,19 +212,19 @@ st.subheader("CO Level")
 co_input = st.number_input(
     "Enter CO level (ppm)",
     min_value=0.0,
-    max_value=100.0, # Adjusted max_value to better fit common hazardous levels in ppm
+    max_value=100.0,
     step=0.1,
     value=5.0,
-    key="num_input_co", # Unique key for this widget
+    key="num_input_co",
     help="Carbon Monoxide level in parts per million (ppm)"
 )
 co_slider = st.slider(
     "Adjust CO level (ppm)",
     min_value=0.0,
-    max_value=100.0, # Consistent max_value with number_input
+    max_value=100.0,
     step=0.1,
-    value=co_input, # Link slider to number input
-    key="slider_co", # Unique key for this widget
+    value=co_input,
+    key="slider_co",
     help="Carbon Monoxide level in parts per million (ppm)"
 )
 co = co_slider
